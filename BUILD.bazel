@@ -1,0 +1,20 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "boost.safe_numerics",
+    hdrs = glob([
+        "include/**/*.hpp",
+        "include/**/*.h",
+    ]),
+    includes = ["include"],
+    deps = [
+        "@boost.concept_check",
+        "@boost.config",
+        "@boost.core",
+        "@boost.integer",
+        "@boost.logic",
+        "@boost.mp11",
+    ],
+)
